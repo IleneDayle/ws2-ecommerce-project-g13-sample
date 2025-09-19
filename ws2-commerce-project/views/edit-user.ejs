@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+        <link rel="stylesheet" href="/css/styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+        <nav class="navbar">
+            <span class="brand">
+                <a href="/">SpinCycle Laundry</a>
+            </span>
+            <div class="auth">
+                <a href="/users/list">Back to List</a>
+                <a href="/users/dashboard">Dashboard</a>
+            </div>
+        </nav>
+
+        <div class="main-content">
+            <h1>Edit User Profile</h1>
+            
+            <form action="/users/edit/<%= user._id %>" method="POST">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" value="<%= user.name %>" required placeholder="Enter full name">
+                
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" value="<%= user.email %>" required placeholder="Enter email address">
+                
+                <button type="submit">Update User</button>
+                
+                <div style="text-align: center; margin-top: 24px;">
+                    <p><a href="/users/list">Cancel and go back</a></p>
+                </div>
+            </form>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 SpinCycle Laundry. Making laundry effortless.</p>
+        </footer>
+    </body>
+</html>
